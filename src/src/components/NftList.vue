@@ -18,7 +18,7 @@
         <button class="action" @click="sendMessage()" v-if="!sendLoader">Send Message</button>
       </div>
       <img src="/nearstmas/img/christmas-loading.gif" alt="" class="message-loader" v-if="sendLoader" width="200">
-
+      <br>
       <hr>
       <h5>Your Messages:</h5>
       <div v-if="messagesReady" class="list-messages">
