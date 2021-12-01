@@ -1,0 +1,9 @@
+/* Your custom CSS code */
+.button {
+    padding: 14px 38px;
+    border-radius: 38px;
+    background: red;
+    text-transform: uppercase;
+    color: #FFF;
+    font-weight: bold;
+}
