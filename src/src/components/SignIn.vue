@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Ho ho ho</h2>
-    <h3>
+    <h3 style="font-size: 24px; margin-top: 50px;">
       <br>SignIn to write your letter, select gift or ask Santa Claus!
     </h3>
     <button @click="signIn()" class="button">Sign In</button>
