@@ -2,7 +2,7 @@
   <div>
     <h2>Ho ho ho</h2>
     <h3>
-      <br>SignIn to talk with Santa Claus!
+      <br>SignIn to write your letter, select gift or ask Santa Claus!
     </h3>
     <button @click="signIn()" class="button">Sign In</button>
   </div>

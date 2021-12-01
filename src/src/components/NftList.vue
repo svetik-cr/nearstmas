@@ -16,7 +16,7 @@
         </label>
         <button class="action" @click="sendMessage()" v-if="!sendLoader">Send Message</button>
       </div>
-      <img src="/img/christmas-loading.gif" alt="" class="message-loader" v-if="sendLoader" width="200">
+      <img src="/nearstmas/img/christmas-loading.gif" alt="" class="message-loader" v-if="sendLoader" width="200">
 
       <hr>
       <h5>Your Messages:</h5>
@@ -32,7 +32,7 @@
         </div>
       </div>
       <div v-if="!messagesReady">
-        <img src="/img/christmas-loading.gif" alt="" class="messages-list-loader" width="200">
+        <img src="/nearstmas/img/christmas-loading.gif" alt="" class="messages-list-loader" width="200">
       </div>
     </div>
 
@@ -57,7 +57,7 @@
         </div>
       </div>
       <div v-if="!giftsReady">
-        <img src="/img/christmas-loading.gif" alt="" class="messages-list-loader" width="200">
+        <img src="/nearstmas/img/christmas-loading.gif" alt="" class="messages-list-loader" width="200">
       </div>
     </div>
 
@@ -68,7 +68,7 @@
       <div v-for="text in santaSayList" :key="text" class="one-joke">
         {{ text }}
       </div>
-      <img v-if="isPing" src="/img/christmas-loading.gif" alt="" class="messages-list-loader" width="200">
+      <img v-if="isPing" src="/nearstmas/img/christmas-loading.gif" alt="" class="messages-list-loader" width="200">
     </div>
 
   </div>
