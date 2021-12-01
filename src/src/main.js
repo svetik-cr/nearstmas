@@ -2,10 +2,6 @@ import {createApp} from 'vue'
 import App from './App.vue'
 import getConfig from './config.js';
 import * as nearAPI from 'near-api-js';
-import 'vue-universal-modal/dist/index.css'
-
-import VueUniversalModal from 'vue-universal-modal'
-import 'bootstrap/dist/css/bootstrap.css'
 
 async function initContract() {
   const nearConfig = getConfig(process.env.NODE_ENV || 'testnet');
@@ -13,13 +9,14 @@ async function initContract() {
   // Initializing connection to the NEAR TestNet
   const near = await nearAPI.connect({
     deps: {
-      keyStore: new nearAPI.keyStores.BrowserLocalStorageKeyStore()
+      keyStore: new nearAPI.keyStores.BrowserLocalStorageKeyStore(window.localStorage, "santa-")
     },
     ...nearConfig
   });
 
   // Needed to access wallet
   const walletConnection = new nearAPI.WalletConnection(near);
+  console.log(walletConnection);
 
   // Load in account data
   let currentUser;
@@ -47,9 +44,6 @@ initContract().then(async (contractData) => {
     window.wallet = contractData.walletConnection;
 
     const app = createApp(App)
-    app.use(VueUniversalModal, {
-      teleportTarget: '#modals',
-    });
     app.mount('#app');
   }
 )

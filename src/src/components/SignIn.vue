@@ -35,6 +35,6 @@ h2 {
 }
 
 h3 {
-  margin-bottom: 30px !important;
+  margin-bottom: 24px !important;
 }
 </style>

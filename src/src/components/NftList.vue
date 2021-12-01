@@ -1,6 +1,6 @@
 <template>
   <div class="main-window">
-    <h3>Hello my little {{ user.accountId }}</h3>
+    <h3>Hello my little <span style="color: #fff9cd">{{ user.accountId }}</span></h3>
     <hr>
     <button class="inner" @click="selected=1" :disabled="selected===1">1. Write a letter to Santa Claus</button>
     <button class="inner" @click="selected=2" :disabled="selected===2">2. Choice your Gift</button>
@@ -8,6 +8,7 @@
 
     <div class="block" v-if="selected===1">
       <p>You can send so many messages as you wish:</p>
+      <br>
       <textarea placeholder="Ask / Wish / Dream" maxlength="500" v-model="messageText"></textarea>
       <div class="relative">
         <label class="vip">
@@ -38,6 +39,7 @@
 
     <div class="block" v-if="selected===2">
       <p>You can select only one gift. Also you can change your gift and see gifts history:</p>
+      <br>
       <div class="gift-list">
         <div class="one-gift" v-for="gift in giftList" :key="gift.id" :class="{
           selected: selectedGift===gift.id
@@ -62,9 +64,10 @@
     </div>
 
     <div class="block" v-if="selected===3">
+      <br>
       <button class="action" @click="santaSay" :disabled="isPing">Ping Santa...</button>
       <hr>
-      <h4>Random Santa stories for you:</h4>
+      <h4 v-if="santaSayList.length">Random Santa stories for you:</h4>
       <div v-for="text in santaSayList" :key="text" class="one-joke">
         {{ text }}
       </div>
@@ -324,7 +327,8 @@ button.action {
 .small-gift:not(:last-child):after {
   content: '>';
   display: inline-block;
-  margin: 10px 0px 10px 10px;
+  margin: 16px 0px 10px 10px;
+  vertical-align: top;
 }
 
 .one-gift:hover {
@@ -345,6 +349,7 @@ hr {
   border: none;
   border-top: 2px dashed red !important;
   background: transparent;
+  margin: 20px 0;
 }
 
 .one-message {
@@ -375,4 +380,5 @@ hr {
 .message-loader {
   margin-top: -82px;
 }
+
 </style>

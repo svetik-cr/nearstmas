@@ -44,4 +44,14 @@ export default {
   margin-bottom: 1%;
   font-size: 60px;
 }
+
+button {
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+h4, h5, h6 {
+  font-size: 26px;
+}
 </style>
