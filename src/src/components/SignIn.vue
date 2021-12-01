@@ -15,7 +15,7 @@ export default {
     signIn() {
       window.wallet.requestSignIn(
           window.nearConfig.contractName,
-          'NEAR Galaxy President'
+          'NEARstmas'
       );
     }
   }
